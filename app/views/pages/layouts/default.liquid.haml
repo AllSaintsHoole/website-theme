@@ -35,12 +35,6 @@ published: false
       .children
         %div
           {% nav page, depth: 1, active_class: 'active' %}
-          {% for child in page.children %}
-          {% if child.listed == true %}
-          %a.btn.btn-outline{ href: "{% path_to child %}" }
-            {{ child.title | escape }}
-          {% endif %}
-          {% endfor %}
       {% endif %}
       {% endblock %}
 
