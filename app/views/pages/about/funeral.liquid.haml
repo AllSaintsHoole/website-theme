@@ -1,0 +1,24 @@
+---
+title: Funeral
+listed: true
+published: true
+position: 6
+editable_elements:
+  content/body: "<p>All Saints seeks to offer care and support in times of bereavement.</p>\r\n<p>The
+    Vicar, Curate or an experienced member of the team will be happy to visit and
+    discuss with you what kind of service you would like for your loved one, whether
+    you decide to have a service in All Saints or to go straight to the Crematorium.</p>\r\n<p>We
+    pray regularly for those who have been bereaved and we try to speak of the hope
+    which we can have in the face of death because of the resurrection of Jesus Christ.</p>"
+---
+{% extends parent %}
+
+{% block content %}
+
+%section
+  %div
+    %h2 Funeral
+    {% editable_text body %}
+    {% endeditable_text %}
+
+{% endblock %}

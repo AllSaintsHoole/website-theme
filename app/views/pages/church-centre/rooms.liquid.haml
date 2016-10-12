@@ -1,0 +1,28 @@
+---
+title: Rooms
+listed: true
+published: true
+position: 1
+---
+{% extends parent %}
+
+{% block content %}
+
+%section
+  %div
+    %h2 Rooms
+    .rooms
+      {% for room in contents.rooms %}
+      .listing
+        {% link_to room %}
+        %h3 {{ room.name | escape }}
+        {% endlink_to %}
+        %small approx {{ room.dimentions | escape }} (up to {{ room.capacity | escape }} people)
+        {% if room.photo.url %}
+        %a.room-image{ href: '{% path_to room %}' }
+          %img{ src: "{{ room.photo.url | resize: '430x220#' }}", width: "430", height: "220" }
+        {% endif %}
+        {{ room.about | markdown }}
+      {% endfor %}
+
+{% endblock %}

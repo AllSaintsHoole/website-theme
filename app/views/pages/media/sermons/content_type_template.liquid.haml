@@ -1,0 +1,68 @@
+---
+title: Sermon template
+
+# true if the page is included in the menu
+listed: false
+
+# true if the page is published
+published: true
+
+# position among sibling pages
+position: 99
+
+# other unique identifier of this page. To be used with the path_to liquid tag.
+# handle: my-page-handle
+
+# content type that this page is templatizing
+content_type: "sermons"
+---
+{% extends parent %}
+
+{% block content %}
+%section
+  .person
+    %h2
+      {{ sermon.title | escape }}
+      %small
+        {% link_to sermon.series %}
+        ({{ sermon.series.name | escape }})
+        {% endlink_to %}
+    
+    %small
+      {% link_to sermon.person %}
+      {{ sermon.person.name | escape }}
+      {% endlink_to %}
+
+    %p {{ sermon.bible_verse | escape }}
+
+    {% capture readingurl %}https://bible-api.com/{{ sermon.bible_verse | encode }}{% endcapture %}
+    {% consume reading from readingurl, expires_in: 525600 %}
+    %blockquote
+      {{ reading.text | strip | multi_line }}
+      %cite {{ sermon.bible_verse | escape }} ({{ reading.translation_name }})
+    {{ sermon.notes | markdown }}
+    {% endconsume %}
+
+    {% if sermon.recording.url %}
+    %audio{ controls: "controls" }
+      %source{ src: "{{ sermon.recording.url }}", type: "audio/mpeg" }
+      Your browser does not support playing the audio online.
+    %p
+      %a.btn.btn-outline{ href: "{{ sermon.recording.url }}", download: "{{ sermon.series.name | escape }} - {{ sermon.title | escape}} ({{ sermon.person.name | escape }})" }
+        Download audio
+    {% else %}
+    %p.btn.btn-outline
+      Sorry, no audio available
+    {% endif %}
+%section
+  %div
+    %h2 {{ sermon.series.name | escape }}
+    {{ sermon.series.summary | markdown }}
+    %a.btn.btn-outline{ href: "{% path_to sermon.series %}" }
+      View whole series
+    {% if sermon.series.handbook.url %}
+    %a.btn.btn-outline{ href: "{{ sermon.series.handbook.url }}" }
+      Download Series Handbook
+    {% endif %}
+
+{% endblock %}

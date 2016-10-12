@@ -1,0 +1,24 @@
+.listing
+  .left
+    {% link_to sermon %}
+    %h3 {{ sermon.title | escape }}
+    {% endlink_to %}
+    {% link_to sermon.series %}
+    %p {{ sermon.series.name | escape }}
+    {% endlink_to %}
+    %p {{ sermon.bible_verse | escape }}
+
+    %small
+      {{ sermon.date | localized_date: '%d/%m/%Y' }} - 
+      {% link_to sermon.person %}
+      {{ sermon.person.name | escape }}
+      {% endlink_to %}
+  .right
+    %p
+      %a.btn.btn-outline{ href: "{% path_to sermon %}" }
+        View sermon
+    {% unless series %}
+    %p
+      %a.btn.btn-outline{ href: "{% path_to sermon.series %}" }
+        View series
+    {% endunless %}

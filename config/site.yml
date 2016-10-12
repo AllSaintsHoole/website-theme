@@ -1,0 +1,63 @@
+# The name of this site
+# This text displays in the back-office and
+# can be used in templates through the site.name global variable
+name: "All Saints Church"
+
+# An array of domain aliases for the site
+# This option is for sites on multi-site engines
+# domains: [www.example.com, example.com]
+
+# An array of locales (languages) the site is available in
+# The locale listed first is the site's default locale
+# Locales are specified using ISO language codes
+# Possible locales include: en, de, fr, pl, pt-BR, it, nl, nb, es, ru, et, ja, zh-CN
+locales: [en]
+
+# The site's timezone
+# This converts the server's time to the site's time zone in templates
+# The TimeZone class from Rail's ActiveSupport is used to interpret the string
+# Sample timezone strings: Tokyo, Beijing, Moscow, Cairo, Paris, Pacific Time (US & Canada)
+# timezone: Paris
+
+# For SEO purposes, sites may wish to add a relevant string to the <title> tag
+# And include <meta type="keywords"> and <meta type="description">
+# For this purpose you can set values for these variables here
+# They can be accessed in templates through the site.seo_title, site.meta_keywords, and site.meta_description variables
+seo_title: All Saints
+meta_keywords: "some meta keywords"
+meta_description: "some meta description"
+
+# You can control the display of the "Properties" section in the back-office
+# metafields_ui:
+#   label: Store settings # use a hash for localized versions
+#   icon: shopping-cart # FontAwesome icons without the leading "fa-" string.
+#   hint: "Lorem ipsum..."
+
+# Each site can have its own set of custom properties organized in namespaces.
+# First, define namespaces and their fields in the config/metafields_schema.yml file.
+# Finally, set default values below as described in the example.
+# You can access them in your liquid templates and snippets:
+#   {{ site.metafields.<namespace>.<field> }}
+#
+# Example:
+#
+metafields:
+  blog:
+    number_of_posts_per_page: 3
+  social:
+    twitter: http://locomotive.works
+    facebook: http://locomotive.works
+    github: http://locomotive.works
+  footer:
+    office_phone: 01244 322056
+    office_phone_international: '+441244322056'
+    centre_phone: 01244 345649
+    centre_phone_international: '+441244345649'
+    office_email: office@allsaints.church
+    centre_email: centre@allsaints.church
+    address: Hoole Road, Chester, CH2&nbsp;3HZ
+    charity_number: '1131968'
+  header:
+    info: 'New website: There may be things which don''t work correctly. Let us know
+      if you find any!'
+    info_link: mailto:tech@allsaints.church?subject=New%20Site%20Feedback

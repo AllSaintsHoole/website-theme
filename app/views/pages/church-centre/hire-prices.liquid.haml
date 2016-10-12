@@ -1,0 +1,22 @@
+---
+title: Hire Prices
+listed: true
+published: true
+position: 2
+editable_elements:
+  content/body: "<p><a href=\"/samples/assets/Price_list_commercial_bookings_only-1.pdf\"
+    title=\"Price_list_commercial_boo...\">Hire Prices for Commercial Bookings</a></p>\r\n<p><a
+    href=\"/samples/assets/Price_list_for_one_off_community_bookings.pdf\" title=\"Price_list_for_one_off_co...\">Hire
+    Prices for Community Bookings</a></p>"
+---
+{% extends parent %}
+
+{% block content %}
+
+%section
+  %div
+    %h2 Hire Prices
+    {% editable_text body %}
+    {% endeditable_text %}
+
+{% endblock %}

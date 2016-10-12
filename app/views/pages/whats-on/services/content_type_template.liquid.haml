@@ -1,0 +1,51 @@
+---
+title: Service template
+listed: true
+published: true
+
+# true if the page can be used as a layout for new pages created by the editors
+# is_layout: true
+
+# position among sibling pages
+# position: 1
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# other unique identifier of this page. To be used with the path_to liquid tag.
+# handle: my-page-handle
+
+# content type that this page is templatizing
+content_type: "services"
+
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends parent %}
+
+{% block content %}
+%section
+  %div
+    %h2 {{ service.name | escape }}
+    {{ service.about | markdown }}
+
+    %p
+      %a.btn.btn-outline{ href: "{% path_to services %}"}
+        View other services
+    
+{% if service.sermons.length > 0 %}
+%section
+  %div
+    %h3 Latest {{ service.name | escape }} sermons:
+
+    {% for sermon in service.sermons reversed %}
+    {% if forloop.index0 <= 1 %}
+    {% include 'sermon_listing' with sermon %}
+    {% endif %}
+    {% endfor %}
+
+{% endif %}
+
+
+{% endblock %}

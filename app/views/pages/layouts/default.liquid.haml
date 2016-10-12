@@ -1,0 +1,54 @@
+---
+title: Default layout
+is_layout: false
+listed: false
+published: false
+---
+!!!
+%html{lang: "en"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{charset: "utf-8"}
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
+
+    %title
+      {% if page.title and  page.title != "Home" and page.title != "Index" %}
+      {{ page.title | escape }}
+      |
+      {% endif %}
+      {{ site.name | escape }}
+
+    %link{href: "{{ 'favicon.png' | theme_image_url }}", rel: "shortcut icon"}
+
+    {{ 'main.css' | stylesheet_tag }}
+
+  %body
+    {% include 'header' %}
+
+    %main
+      {% block content %}
+      {% endblock %}
+
+      {% block children %}
+      {% if page.children %}
+      .children
+        %div
+          {% nav page, depth: 1, active_class: 'active' %}
+          {% for child in page.children %}
+          {% if child.listed == true %}
+          %a.btn.btn-outline{ href: "{% path_to child %}" }
+            {{ child.title | escape }}
+          {% endif %}
+          {% endfor %}
+      {% endif %}
+      {% endblock %}
+
+    {% include 'footer' %}
+    {% include 'analytics' %}
+    %script
+      document.getElementById("spinner-form4").onchange = toggleMenu;
+
+      function toggleMenu(){
+      document.getElementsByTagName('nav')[0].classList.toggle("visible");
+      }

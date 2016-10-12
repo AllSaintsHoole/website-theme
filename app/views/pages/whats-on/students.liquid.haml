@@ -1,0 +1,65 @@
+---
+title: Students
+
+# true if the page is included in the menu
+listed: true
+
+# true if the page is published
+published: true
+
+# true if the page can be used as a layout for new pages created by the editors
+# is_layout: true
+
+# position among sibling pages
+position: 4
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# other unique identifier of this page. To be used with the path_to liquid tag.
+# handle: my-page-handle
+
+# content type that this page is templatizing
+# content_type: "<slug of one of the content types>"
+
+editable_elements:
+  content/info: ''
+  content/body: ''
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends parent %}
+
+{% block content %}
+
+%section
+  %div
+    %h2 Students
+    .info
+      {% editable_text info %}
+      {% endeditable_text %}
+    
+    {% editable_text body %}
+    {% endeditable_text %}
+
+    {% with_scope category: 'Students' %}
+
+    {% for activity in contents.activities %}
+
+    .listing
+      %a{ href: "students/{{ activity._slug }}" }
+        %h3 {{ activity.name | escape }}
+      {% if activity.age != "" %}
+      %small {{ activity.age | escape }}
+      {% endif %}
+      {% if activity.logo.url %}
+      .room-image
+        %a{ href: "students/{{ activity._slug }}" }
+          %img{ src: "{{ activity.logo.url | resize: '320x180#' }}", width: "320", height: "180" }
+      {% endif %}
+      %p {{ activity.teaser | escape }}
+
+    {% endfor %}
+
+    {% endwith_scope %}
+
+{% endblock %} 

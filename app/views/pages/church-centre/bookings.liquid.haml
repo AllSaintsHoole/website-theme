@@ -1,0 +1,23 @@
+---
+title: Bookings
+listed: true
+published: true
+position: 2
+editable_elements:
+  content/body: "<p>\r\n</p><p>\r\n\tYou can check room availability through our</p><p><a
+    href=\"http://allst.ch/bookings\" title=\"Link: http://allst.ch/bookings\">online
+    bookings manager</a>.</p>\r\n<p>\r\n\tFor further information or to hire a room
+    please <a href=\"https://allsaints.church/contactus\" title=\"Link: https://allsaints.church/contactus\">contact
+    our Centre Manager</a></p>\r\n\r\n<br><p></p>"
+---
+{% extends parent %}
+
+{% block content %}
+
+%section
+  %div
+    %h2 Bookings
+    {% editable_text body %}
+    {% endeditable_text %}
+
+{% endblock %}

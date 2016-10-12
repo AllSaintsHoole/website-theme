@@ -1,0 +1,30 @@
+---
+title: People
+listed: true
+published: true
+position: 2
+---
+{% extends parent %}
+
+{% block content %}
+
+%section
+  %div
+    %h2 People
+    .people
+      {% for person in contents.people %}
+      .listing
+        {% link_to person %}
+        %h3 {{ person.name | escape }}
+        {% endlink_to %}
+        %small {{ person.role | escape }}
+        {% if person.photo.url %}
+        .person-image
+          {% link_to person %}
+          %img{ src: "{{ person.photo.url | resize: '180x200#' }}", width: "180", height: "200" }
+          {% endlink_to %}
+        {% endif %}
+        {{ person.about | markdown }}
+      {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,868 @@
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700';
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Lato', Calibri, Airel, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-top: 2rem;
+}
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span {
+  color: #ffffff;
+  display: block;
+}
+h1,
+h2 {
+  font-family: 'Futura Std', Calibri, Airel, sans-serif;
+  font-weight: normal;
+  font-weight: book;
+  text-transform: uppercase;
+  font-size: 4.5em;
+  font-size: 4.5rem;
+}
+h2 {
+  font-weight: normal;
+  font-weight: book;
+  font-size: 3.8em;
+  font-size: 3.8rem;
+}
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-weight: book;
+  font-family: 'Futura Std', Calibri, Airel, sans-serif;
+  font-size: 1.8rem;
+}
+h3 {
+  font-size: 2.4em;
+  font-size: 2.4rem;
+}
+h4 {
+  font-size: 2em;
+  font-size: 2rem;
+}
+img {
+  max-width: 100%;
+  height: 100%;
+}
+a,
+.link {
+  text-decoration: none;
+  transition: all 0.15s ease-out;
+  color: #fff;
+}
+a.no-link,
+.link.no-link {
+  color: inherit;
+  transition: inherit;
+}
+a:hover.alt,
+.link:hover.alt {
+  text-decoration: underline;
+}
+li ul li {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+p,
+small,
+li {
+  line-height: 2.2rem;
+}
+p,
+small,
+a,
+li,
+blockquote,
+cite {
+  font-family: 'Lato', Calibri, Airel, sans-serif;
+  font-size: 1em;
+  font-size: 1.5rem;
+}
+blockquote {
+  padding: 2rem;
+  background-color: #282828;
+  margin-top: 1rem;
+}
+blockquote cite {
+  display: inline-block;
+  margin-top: 1rem;
+}
+label,
+input,
+textarea,
+button,
+select,
+option {
+  font-family: 'Lato', Calibri, Airel, sans-serif;
+  font-size: 1em;
+  font-size: 1.5rem;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+label {
+  display: block;
+}
+input,
+textarea,
+button,
+select,
+option {
+  border: 2px #282828 solid;
+  outline: none;
+  margin-bottom: 1rem;
+}
+input:focus,
+textarea:focus,
+button:focus,
+select:focus,
+option:focus {
+  box-shadow: 0 0 2rem #9CEE33;
+}
+select {
+  background: transparent;
+  border: 2px #282828 solid;
+  height: 4rem;
+  text-indent: 1rem;
+  cursor: pointer;
+}
+input[submit],
+button {
+  background: transparent;
+  border: 5px #9CEE33 solid;
+  width: auto;
+  padding: 1rem 2rem;
+  transition: all 0.15s ease-out;
+  cursor: pointer;
+}
+input[submit]:hover,
+button:hover {
+  background-color: #9CEE33;
+  color: #fff;
+}
+span {
+  font-size: 1em;
+}
+span.newline {
+  display: block;
+}
+hr {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+form {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+textarea {
+  height: 20rem;
+}
+small {
+  color: #b2b2b2;
+}
+pre,
+strong,
+em {
+  font-size: 1.4em;
+  font-size: 1.5rem;
+}
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  padding: 1rem 2rem;
+  color: #fff;
+}
+.btn-nosides {
+  padding-left: 0;
+  padding-right: 0;
+}
+.btn:first-child * {
+  margin-top: 0;
+  padding-top: 0;
+}
+.btn-outline {
+  border: 1px #fff solid;
+}
+.btn-outline:hover {
+  background-color: #fff;
+  color: #000;
+}
+.center {
+  text-align: center;
+}
+.right-align {
+  text-align: right !important;
+}
+audio {
+  width: 100%;
+  padding-top: 2rem;
+}
+header {
+  color: #fff;
+  background-color: #333;
+}
+header .logo {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+header .logo img:hover {
+  color: #e2d;
+}
+header .logo a {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+}
+header .logo a img {
+  display: inline;
+  margin: 0 auto;
+}
+header .logo a img:hover {
+  opacity: 0.5;
+}
+header .logo h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+header .logo h2 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+header .logo .bold {
+  font-weight: bold;
+}
+header a {
+  color: #fff;
+}
+header .header-top {
+  background-color: #282828;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+header .header-top * {
+  display: inline-block;
+  vertical-align: top;
+}
+header .header-top a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 2rem;
+}
+header .header-top a:hover {
+  text-decoration: underline;
+}
+header .header-top div {
+  margin: 0 3rem;
+}
+header .header-top h3 {
+  padding: 0;
+  margin: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  text-indent: -9999px;
+  background-size: 2.4rem 2.4rem;
+}
+header .header-top .service-times h3 {
+  background-image: url(../images/icons/clock.svg);
+}
+header .header-top .location h3 {
+  background-image: url(../images/icons/map-point.svg);
+}
+header .hamburger {
+  display: none;
+  position: relative;
+  margin: 0 auto 2rem;
+  height: 50px;
+  width: 50px;
+}
+header .hamburger * {
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  box-sizing: border-box;
+}
+header .hamburger input[type=checkbox] {
+  display: none;
+}
+header .hamburger label {
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+  top: 10px;
+  left: 0;
+}
+header .hamburger .spinner4 {
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background-color: #fff;
+}
+header .hamburger .diagonal.part-1 {
+  position: relative;
+  float: left;
+}
+header .hamburger .horizontal {
+  position: relative;
+  float: left;
+  margin-top: 6px;
+}
+header .hamburger .diagonal.part-2 {
+  position: relative;
+  float: left;
+  margin-top: 6px;
+}
+header .hamburger input[type=checkbox]:checked ~ .spinner-spin4 > .horizontal {
+  transform: translate(-100px, 0px);
+  -webkit-transform: translate(-100px, 0px);
+  opacity: 0;
+}
+header .hamburger input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-1 {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  margin-top: 10px;
+}
+header .hamburger input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-2 {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin-top: -16px;
+}
+header .hamburger input[type=checkbox]:checked ~ nav {
+  display: none;
+}
+header nav {
+  background-color: #282828;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  transition: all .5s ease;
+}
+header nav > ul {
+  max-width: 960px;
+  margin: 0 auto;
+}
+header nav ul li {
+  display: block;
+  text-transform: uppercase;
+}
+header nav ul li:hover {
+  background-color: #5b5b5b;
+}
+header nav ul li a {
+  display: block;
+  padding: 1.6rem 2.2rem;
+  font-family: 'Lato', Calibri, Airel, sans-serif;
+  line-height: 1.8rem;
+}
+header nav ul li ul {
+  display: none;
+  background-color: #282828;
+}
+header nav ul li > ul a:hover + ul,
+header nav ul li > ul ul:hover {
+  display: block;
+}
+header nav::after {
+  display: block;
+  content: '';
+  height: 5rem;
+  width: 100%;
+  background-color: #282828;
+}
+header .info-banner {
+  background-color: #8A1919;
+}
+header .info-banner h3 {
+  margin: 0 auto;
+  padding: 1rem;
+}
+header .info-banner h3,
+header .info-banner a {
+  font-size: 1.7rem;
+  text-align: center;
+}
+main section {
+  background-color: #333;
+  color: #fff;
+}
+main section:not(:first-child)::before {
+  display: block;
+  padding: 0;
+  margin: 0;
+  content: '';
+  height: 40px;
+  background-color: #282828;
+}
+main section.image {
+  text-align: center;
+  max-height: 60rem;
+  overflow: hidden;
+}
+main section.image img {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+main section a,
+main section .link {
+  cursor: pointer;
+}
+main section a:active,
+main section .link:active {
+  opacity: 0.5;
+}
+main section:hover a {
+  color: #98CDFF;
+}
+main section.image {
+  background-color: #7086A4;
+}
+main section h2 {
+  padding: 1rem 0 0.5rem;
+}
+main section h3 {
+  padding: 2rem 0 0.5rem;
+}
+main section h4,
+main section h5,
+main section h6 {
+  padding: 2rem 0 0.5rem;
+}
+main section p {
+  padding-top: 1rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+main section pre {
+  padding-top: 1rem;
+}
+main section ul,
+main section ol {
+  padding: 2rem;
+}
+main section > div {
+  padding: 3rem 1.2rem 5rem;
+  max-width: 960px;
+  margin: 0 auto;
+  overflow: auto;
+  vertical-align: top;
+}
+main section > div:first-child > .title {
+  margin-bottom: 3rem;
+}
+main section > div div {
+  vertical-align: top;
+  display: block;
+}
+main section > div .border {
+  margin: auto 0.6rem 1.5rem;
+  vertical-align: top;
+  border: 0.5rem #282828 solid;
+  padding: 2rem 2rem 2.5rem;
+}
+main section > div .border p {
+  text-align: center;
+}
+main section > div .item {
+  padding: 20px;
+}
+main section > div > a {
+  display: block;
+}
+main section .highlighted {
+  margin-top: 2rem;
+  border: 0.2rem solid #282828;
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+main section #map {
+  height: 40rem;
+}
+main section .vision {
+  border: 10px #9CEE33 solid;
+}
+main section .vision p {
+  font-size: 2em;
+  font-size: 2rem;
+}
+main section .postal-address {
+  font-family: 'Lato', Calibri, Airel, sans-serif;
+  padding: 10px;
+}
+main section .footer {
+  margin-top: 15px;
+  display: inline-block;
+}
+main section .sermon p {
+  padding: 0;
+}
+main .children {
+  background-color: #333;
+  color: #fff;
+}
+main .children > div {
+  padding: 3rem 1.2rem 5rem;
+  max-width: 960px;
+  margin: 0 auto;
+  overflow: auto;
+  vertical-align: top;
+}
+main .children nav ul li {
+  display: inline-block;
+}
+main .children nav ul li a {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  padding: 1rem 2rem;
+  color: #fff;
+  border: 1px #fff solid;
+}
+main .children nav ul li a:hover {
+  background-color: #fff;
+  color: #000;
+}
+main .icon-list {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+main .icon-list li {
+  list-style: none;
+}
+main .icon-list li a {
+  padding: 5px;
+}
+main .icon-list li a img {
+  height: 100%;
+}
+main .listing {
+  padding: 2rem 0;
+  overflow: auto;
+}
+main .listing::before {
+  display: block;
+  content: '';
+  border-top: 1px #fff solid;
+  height: 10px;
+  padding: 0;
+}
+main .sunday-services ul li {
+  text-align: center;
+  display: inline-block;
+  padding-top: 20px;
+}
+main .sunday-services ul li ul li {
+  padding-top: 0;
+}
+main .sunday-services ul li p {
+  margin-top: 20px;
+}
+main .twitter-logo {
+  padding: 0;
+  margin: 0;
+  width: 5rem;
+  height: 5rem;
+  text-indent: -9999px;
+  background-size: 5rem 5rem;
+  background-image: url(../images/icons/twitter.svg);
+  display: inline-block;
+  vertical-align: top;
+}
+main .twitter-follow-text {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+main .tweet svg {
+  max-width: 3rem;
+  max-height: 3rem;
+  padding: 1rem;
+}
+main .tweet .hidden {
+  display: none;
+}
+main .tweet .reply {
+  fill: #AAB8C2;
+}
+main .tweet .reply:hover,
+main .tweet .reply:active {
+  fill-opacity: 0.5;
+}
+main .tweet .retweet {
+  fill: #AAB8C2;
+}
+main .tweet .retweet:hover {
+  fill: #19CF86;
+}
+main .tweet .retweet:active {
+  fill-opacity: 0.5;
+}
+main .tweet .like {
+  fill: #AAB8C2;
+}
+main .tweet .like:hover {
+  fill: #E81C4F;
+}
+main .tweet .like:active {
+  fill-opacity: 0.5;
+}
+main .person-image {
+  float: right;
+  padding: 0 2rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+main .person-image img {
+  -webkit-clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+  clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+}
+footer {
+  padding: 2rem 0;
+  background-color: #282828;
+  color: #fff;
+  text-align: center;
+}
+footer div {
+  padding: 20px;
+}
+footer:not(:first-child)::before {
+  display: block;
+  padding: 0;
+  margin: 0;
+  content: '';
+  height: 20px;
+  background-color: #282828;
+}
+footer h2 {
+  padding: 0 0 20px 0;
+}
+footer a,
+footer .link {
+  color: #fff;
+}
+footer a:hover:not(.no-highlight),
+footer .link:hover:not(.no-highlight) {
+  text-decoration: underline;
+}
+footer .contact {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: auto;
+}
+footer .contact h3 {
+  padding-top: 0;
+}
+footer .developer {
+  float: right;
+}
+@media (max-width: 720px) {
+  header .hamburger {
+    display: block;
+  }
+  header nav {
+    height: 0;
+    overflow: hidden;
+  }
+  header nav:not(.visible) * {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  header nav.visible {
+    height: auto;
+  }
+}
+@media (min-width: 350px) {
+  main .icon-list li {
+    display: inline-block;
+  }
+}
+@media (min-width: 400px) {
+  main .icon-list li a img {
+    width: 10rem;
+  }
+}
+@media (min-width: 480px) {
+  h1 span,
+  h2 span,
+  h3 span,
+  h4 span,
+  h5 span,
+  h6 span {
+    display: inline;
+  }
+  main section > div .item,
+  main section > div .border {
+    max-width: 33%;
+    display: inline-block;
+  }
+  main section > div .content {
+    padding: 2rem;
+    float: right;
+  }
+  main .icon-list li a img {
+    width: 12rem;
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  .left::after,
+  .right::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+@media (min-width: 564px) {
+  header .logo a {
+    width: 15%;
+    display: inline-block;
+  }
+  header .logo h1 {
+    display: block;
+    width: 38%;
+    height: 100%;
+    float: left;
+    padding: 2rem;
+  }
+  header .logo h1 span {
+    display: block;
+  }
+  header .logo h2 {
+    display: block;
+    width: 38%;
+    float: right;
+    padding: 2rem;
+    height: 100%;
+  }
+  header .logo h2 span {
+    display: block;
+  }
+}
+@media (min-width: 720px) {
+  main section h2,
+  main section h3,
+  main section h4,
+  main section h5,
+  main section h6 {
+    padding-top: 2rem;
+  }
+  main section > div {
+    padding: 1.5rem 2rem 4rem;
+  }
+  main section > div .item,
+  main section > div .border {
+    max-width: 24%;
+  }
+  main section .tweet {
+    width: 49%;
+    box-sizing: border-box;
+    display: inline-block;
+    padding-right: 2rem;
+  }
+  main section .tweet p {
+    text-align: left;
+  }
+  main section .tweet svg {
+    max-width: 2rem;
+    max-height: 2rem;
+    padding: 0.5rem;
+  }
+  main .icon-list li {
+    padding: 2rem;
+  }
+  main .room-image {
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+  header .logo h1 span {
+    display: inline;
+  }
+  header .logo h2 span {
+    display: inline;
+  }
+  header nav {
+    background-color: transparent;
+  }
+  header nav > ul > .active > a + ul {
+    display: block;
+  }
+  header nav .active > a {
+    border: 1px #fff solid;
+    border-bottom: #282828;
+  }
+  header nav ul li {
+    display: block;
+    vertical-align: top;
+  }
+  header nav ul li ul li {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  header nav > ul .active {
+    background-color: #0e0e0e;
+    color: #fff;
+  }
+  header nav > ul > li {
+    display: inline-block;
+  }
+  header nav > ul > li > a {
+    color: #fff;
+  }
+  header nav > ul > li.active a {
+    background-color: #282828;
+    color: #fff;
+  }
+  header nav > ul > li > ul {
+    position: absolute;
+    margin-left: -8rem;
+  }
+  header nav > ul > li > ul > li {
+    display: inline-block;
+  }
+  header nav > ul > li > ul > li ul {
+    position: absolute;
+    max-width: 20rem;
+  }
+  header nav > ul > li > ul > li.active a {
+    background-color: #0e0e0e;
+  }
+}
+@media (min-width: 820px) {
+  header .logo h1 {
+    padding-top: 3.5rem;
+  }
+}
+@media (min-width: 900px) {
+  header .logo h1 {
+    display: inline-block;
+  }
+  header .logo h1 ul li {
+    list-style: inside circle;
+  }
+}

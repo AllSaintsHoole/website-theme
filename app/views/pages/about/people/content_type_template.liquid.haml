@@ -1,0 +1,48 @@
+---
+title: People template
+
+# true if the page is included in the menu
+listed: false
+
+# true if the page is published
+published: true
+
+# position among sibling pages
+position: 99
+
+# other unique identifier of this page. To be used with the path_to liquid tag.
+# handle: my-page-handle
+
+# content type that this page is templatizing
+content_type: "people"
+---
+{% extends parent %}
+
+{% block content %}
+%section
+  %div
+    .person
+      %h2 {{ person.name | escape }}
+      %small {{ person.role | escape }}
+      {% if person.photo.url %}
+      .person-image
+        %img{ src: "{{ person.photo.url | resize: '180x200#' }}", width: "180", height: "200" }
+      {% endif %}
+      {{ person.about | markdown }}
+
+      {% if person.email %}
+      %p
+        %a{ href: "mailto:{{ person.email | escape }}" }
+          Contact by email
+      {% endif %}
+
+{% if person.sermons.length > 0 %}
+%section
+  %div
+    %h3 Recent sermons:
+    {% for sermon in person.sermons reversed limit:2 %}
+    {% include 'sermon_listing' with sermon %}
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

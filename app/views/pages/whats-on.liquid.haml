@@ -1,0 +1,41 @@
+---
+title: Whats On
+
+# true if the page is included in the menu
+listed: true
+
+# true if the page is published
+published: true
+
+# true if the page can be used as a layout for new pages created by the editors
+# is_layout: true
+
+# position among sibling pages
+position: 2
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# other unique identifier of this page. To be used with the path_to liquid tag.
+# handle: my-page-handle
+
+# content type that this page is templatizing
+# content_type: "<slug of one of the content types>"
+
+editable_elements:
+  content/body: <p>Here you will find details of all of our church services and activities
+    for adults, children and young people.<br></p>
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends 'layouts/default' %}
+
+{% block content %}
+
+%section
+  %div
+    %h2 What's On
+    {% editable_text body %}
+    %p Content comming soon
+    {% endeditable_text %}
+
+{% endblock %}

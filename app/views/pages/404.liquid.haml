@@ -1,0 +1,27 @@
+---
+title: Page not found
+published: true
+editable_elements:
+  content/jumbotron: |-
+    <h1 class='text-danger'>Sorry, page not found</h1>
+        <p>We can't find the page you're looking for. Maybe we've moved or renamed it?</p>
+        <p>Do try and find it in the menu or try our search (although we guess you didn't come here for a game of hide and seek!)</p>
+        <p>We have logged this error and will look into it.</p>
+  content/text: |-
+    <h1 class='text-danger'>Sorry, page not found</h1>
+        <p>We can't find the page you're looking for. Maybe we've moved or renamed it?</p>
+        <p>Do try and find it in the menu or try our search (although we guess you didn't come here for a game of hide and seek!)</p>
+        <p>We have logged this error and will look into it.</p>
+---
+{% extends 'layouts/default' %}
+
+{% block content %}
+%section
+  .jumbotron
+    {% editable_text text %}
+    %h1.text-danger Sorry, page not found
+    %p We can't find the page you're looking for. Maybe we've moved or renamed it?
+    %p Do try and find it in the menu or try our search (although we guess you didn't come here for a game of hide and seek!)
+    %p We have logged this error and will look into it.
+    {% endeditable_text %}
+{% endblock %}

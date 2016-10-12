@@ -1,0 +1,68 @@
+---
+title: Youth
+
+# true if the page is included in the menu
+listed: true
+
+# true if the page is published
+published: true
+
+# true if the page can be used as a layout for new pages created by the editors
+# is_layout: true
+
+# position among sibling pages
+position: 3
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# other unique identifier of this page. To be used with the path_to liquid tag.
+# handle: my-page-handle
+
+# content type that this page is templatizing
+# content_type: "<slug of one of the content types>"
+
+editable_elements:
+  content/info: <small>Everyone who works with children, young people or vulnerable
+    adults at All Saints – whether paid or voluntary – is vetted and has a current
+    clean DBS check (formerlly CRB).</small>
+  content/body: ''
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends parent %}
+
+{% block content %}
+
+%section
+  %div
+    %h2 Youth
+    .info
+      {% editable_text info %}
+      %small Everyone who works with children, young people or vulnerable adults at All Saints – whether paid or voluntary – is vetted and has a current clean DBS check (formerlly CRB).
+      {% endeditable_text %}
+    
+    {% editable_text body %}
+    {% endeditable_text %}
+
+    {% with_scope category: 'Youth' %}
+
+    {% for activity in contents.activities %}
+
+    .listing
+      %a{ href: "youth/{{ activity._slug }}" }
+        %h3 {{ activity.name }}
+      {% if activity.age != "" %}
+      %small {{ activity.age | escape }}
+      {% endif %}
+      {% if activity.logo.url %}
+      .room-image
+        %a{ href: "youth/{{ activity._slug }}" }
+          %img{ src: "{{ activity.logo.url | resize: '300x180#' }}", width: "300", height: "180" }
+      {% endif %}
+      %p {{ activity.teaser }}
+
+    {% endfor %}
+
+    {% endwith_scope %}
+
+{% endblock %} 

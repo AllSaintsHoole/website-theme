@@ -1,0 +1,56 @@
+---
+title: Series template
+listed: true
+published: true
+
+# true if the page can be used as a layout for new pages created by the editors
+# is_layout: true
+
+# position among sibling pages
+# position: 1
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# other unique identifier of this page. To be used with the path_to liquid tag.
+# handle: my-page-handle
+
+# content type that this page is templatizing
+content_type: "series"
+
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends parent %}
+
+{% block content %}
+%section
+  %div
+    %h2 {{ series.name | escape }}
+    {{ series.summary | markdown }}
+    
+    {% if series.handbook.url %}
+    %p
+      %a.btn.btn-outline{ href: "{{ series.handbook.url }}" }
+        Download Handbook
+    {% endif %}
+
+%section
+  %div
+    %h3 Sermons in the series:
+
+    {% unless series.sermons.length > 0 %}
+
+    %p There are currently no sermons online from this series.
+
+    {% else %}
+
+    {% for sermon in series.sermons %}
+    {% include 'sermon_listing' with sermon, series %}
+    {% endfor %}
+
+    {% endunless %}
+
+
+{% endblock %}

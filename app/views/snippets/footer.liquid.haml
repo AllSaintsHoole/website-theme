@@ -1,0 +1,29 @@
+.container
+  %footer
+    %div
+      %h2 Contact
+      .contact
+        .left
+          %h3 Church Office
+          %p
+            %a{ href: "tel:{{ site.metafields.footer.office_phone_international }}" }
+              {{ site.metafields.footer.office_phone }}
+          %p
+            %a{ href: "mailto:{{ site.metafields.footer.office_email }}" }
+              {{ site.metafields.footer.office_email }}
+        .right
+          %h3 Centre Manager
+          %p
+            %a{ href: "tel:{{ site.metafields.footer.centre_phone_international }}" }
+              {{ site.metafields.footer.centre_phone }}
+          %p
+            %a{ href: "mailto:{{ site.metafields.footer.centre_email }}" }
+              {{ site.metafields.footer.centre_email }}
+      %div
+        %p {{ site.metafields.footer.address }}
+        {% if site.metafields.footer.charity_number %}
+        %small Registered charity: {{ site.metafields.footer.charity_number }}
+        {% endif %}
+      %a{ href: "https://login.allsaints.church" }
+        My Account
+      %p © All Saints Church {{ now | localized_date: '%Y' }}

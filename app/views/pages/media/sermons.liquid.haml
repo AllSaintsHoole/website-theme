@@ -1,0 +1,52 @@
+---
+title: Sermons
+
+# true if the page is included in the menu
+listed: true
+
+# true if the page is published
+published: true
+
+# true if the page can be used as a layout for new pages created by the editors
+# is_layout: true
+
+# position among sibling pages
+# position: 1
+
+# other unique identifier of this page. To be used with the path_to liquid tag.
+handle: sermons
+
+# content type that this page is templatizing
+# content_type: "<slug of one of the content types>"
+
+editable_elements:
+  content/main/body: <p>The latest messages from All Saints</p>
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends parent %}
+
+{% block content %}
+%section
+  %div
+    %h2 Sermons
+    {% editable_text body %}
+    %p The latest messages from All Saints
+    {% endeditable_text %}
+
+    {% with_scope order_by: 'date.desc' %}
+    {% paginate contents.sermons by 10 %}
+    {% for sermon in paginate.collection %}
+
+    {% include 'sermon_listing' with sermon %}
+
+    {% endfor %}
+
+    .listing
+      %p {{ paginate.current_page }} of {{ paginate.total_pages }}
+      {% if paginate.previous_page %}<a href="?page={{paginate.previous_page}}">Previous</a>{% endif %}
+      {% if paginate.next %}<a href="?page={{ paginate.next_page }}">Next</a>{% endif %}
+
+    {% endpaginate %}
+    {% endwith_scope %}
+
+{% endblock %}

@@ -1,0 +1,5 @@
+log/*
+*.log
+public/samples/*
+config/deploy.yml
+data/*
