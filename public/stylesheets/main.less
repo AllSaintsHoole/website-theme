@@ -136,7 +136,8 @@ small,
 a,
 li,
 blockquote,
-cite
+cite,
+time
 {
   font-family: @bodyTypeface;
   font-size: 1em;
@@ -884,6 +885,24 @@ main
 
   .tweet
   {
+    > small
+    {
+      display: block;
+    }
+
+    time
+    {
+      display: inline-block;
+      font-size: 1.2rem;
+      vertical-align: top;
+      padding-top: 0.5rem;
+    }
+
+    .text
+    {
+      color: @mainText;
+    }
+
     svg
     {
       max-width: 3rem;

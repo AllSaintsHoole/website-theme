@@ -89,7 +89,8 @@ small,
 a,
 li,
 blockquote,
-cite {
+cite,
+time {
   font-family: 'Lato', Calibri, Airel, sans-serif;
   font-size: 1em;
   font-size: 1.5rem;
@@ -593,6 +594,18 @@ main .twitter-logo {
 main .twitter-follow-text {
   display: inline-block;
   padding: 0.5rem 1rem;
+}
+main .tweet > small {
+  display: block;
+}
+main .tweet time {
+  display: inline-block;
+  font-size: 1.2rem;
+  vertical-align: top;
+  padding-top: 0.5rem;
+}
+main .tweet .text {
+  color: #fff;
 }
 main .tweet svg {
   max-width: 3rem;
