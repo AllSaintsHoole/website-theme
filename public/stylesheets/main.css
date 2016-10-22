@@ -672,7 +672,10 @@ footer h2 {
 }
 footer a,
 footer .link {
+  display: inline-block;
   color: #fff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 footer a:hover:not(.no-highlight),
 footer .link:hover:not(.no-highlight) {
