@@ -122,7 +122,10 @@ function fetchTweets() {
 
               var p2 = document.createElement("p");
               p2.classList.add("text");
-              p2.appendChild(document.createTextNode(tweet.text));
+              // make #hashtags and @user into links
+              var textWithLinks = tweet.text.replace(/#(\w*)/g,'<a href="https://twitter.com/hashtag/$1">#$1</a>');
+              textWithLinks = textWithLinks.replace(/@(\w*)/g,'<a href="https://twitter.com/$1">@$1</a>');
+              p2.innerHTML = textWithLinks;
             link.appendChild(p2);
 
           newTweet.appendChild(link);
