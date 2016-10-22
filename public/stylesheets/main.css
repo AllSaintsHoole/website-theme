@@ -213,6 +213,9 @@ em {
 .right-align {
   text-align: right !important;
 }
+.right-align p {
+  text-align: right !important;
+}
 audio {
   width: 100%;
   padding-top: 2rem;
@@ -639,6 +642,12 @@ main .tweet .like:hover {
 }
 main .tweet .like:active {
   fill-opacity: 0.5;
+}
+main .sermon time {
+  display: inline-block;
+  font-size: 1.2rem;
+  vertical-align: top;
+  padding-top: 0.5rem;
 }
 main .person-image {
   float: right;
