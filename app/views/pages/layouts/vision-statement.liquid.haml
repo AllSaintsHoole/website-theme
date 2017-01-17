@@ -5,8 +5,9 @@ is_layout: true
 {% extends 'layouts/default' %}
 
 {% block content %}      
-%section.image
-  %img{src: "{{ 'vision-statement.png' | theme_image_url }}", alt: "{{ site.name | escape }} vision statement"}
+%section.image{ style: "background-image: url({{ 'banner.jpg' | theme_image_url }}); background-position: center; background-size: cover;"}
+  %div
+    %img{src: "{{ 'vision-statement.svg' | theme_image_url }}", alt: "{{ site.name | escape }} vision statement"}
 {% block main, short_name: true %}
 %p Edit the theme file to include a content/main block
 {% endblock %}

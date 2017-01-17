@@ -37,16 +37,16 @@ editable_elements:
     {% endeditable_text %}
 
     {% for service in contents.services %}
+    .listing
+      {% link_to service %}
+      %h3 {{ service.name | escape }}
+      {% endlink_to %}
+      %p
+        {{ service.time | escape }}
+        on {{ service.day | escape }}
+        %small ({{ service.frequency | escape }})
 
-    {% link_to service %}
-    %h3 {{ service.name | escape }}
-    {% endlink_to %}
-    %p
-      {{ service.time | escape }}
-      on {{ service.day | escape }}
-      %small ({{ service.frequency | escape }})
-
-    {{ service.teaser | markdown }}
+      {{ service.teaser | markdown }}
 
     {% endfor %}
 

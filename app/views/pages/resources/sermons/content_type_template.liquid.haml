@@ -32,6 +32,12 @@ content_type: "sermons"
       {% link_to sermon.person %}
       {{ sermon.person.name | escape }}
       {% endlink_to %}
+    {% if sermon.person.photo.url %}
+    {% link_to sermon.person %}
+    .person-image
+      %img{ src: "{{ sermon.person.photo.url | resize: '180x200#' }}", width: "180", height: "200" }
+    {% endlink_to %}
+    {% endif %}
 
     %p {{ sermon.bible_verse | escape }}
 

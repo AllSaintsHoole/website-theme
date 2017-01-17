@@ -6,21 +6,27 @@
         .left
           %h3 Church Office
           %p
+            %span.icon.telephone Phone:
             %a{ href: "tel:{{ site.metafields.footer.office_phone_international }}" }
               {{ site.metafields.footer.office_phone }}
           %p
+            %span.icon.email Email:
             %a{ href: "mailto:{{ site.metafields.footer.office_email }}" }
               {{ site.metafields.footer.office_email }}
         .right
           %h3 Centre Manager
           %p
+            %span.icon.telephone Phone:
             %a{ href: "tel:{{ site.metafields.footer.centre_phone_international }}" }
               {{ site.metafields.footer.centre_phone }}
           %p
+            %span.icon.email Email:
             %a{ href: "mailto:{{ site.metafields.footer.centre_email }}" }
               {{ site.metafields.footer.centre_email }}
       %div
-        %p {{ site.metafields.footer.address }}
+        %p
+          %span.icon.map Address:
+          {{ site.metafields.footer.address }}
         {% if site.metafields.footer.charity_number %}
         %small Registered charity: {{ site.metafields.footer.charity_number }}
         {% endif %}

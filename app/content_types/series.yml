@@ -70,5 +70,5 @@ fields:
     label: Handbook # Human readable name of the field
     type: file
     required: false
-    hint: Hopegroup notes for the series
+    hint: Homegroup notes for the series
     localized: false

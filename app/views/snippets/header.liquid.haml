@@ -2,7 +2,7 @@
   .header-top
     .service-times
       %h3 Service times
-      %ul
+      %ul.info
         {% with_scope regular: true %}
         {% for service in contents.services %}
         %li
@@ -13,9 +13,14 @@
         {% endwith_scope %}
     .location
       %h3 Location
-      {% link_to contact %}
-      {{ site.metafields.footer.address }}
-      {% endlink_to %}
+      %a.info{ href: "{% path_to contact %}" }
+        {{ site.metafields.footer.address }}
+    .hamburger
+      %input#spinner-form4{ type: "checkbox" }
+      %label.spinner-spin4{ for: "spinner-form4" }
+        .spinner4.diagonal.part-1
+        .spinner4.horizontal
+        .spinner4.diagonal.part-2
 
   .logo
     {% link_to site.index %}
@@ -39,6 +44,7 @@
       {{ site.metafields.header.info | escape }}
       {% endif %}
   {% endif %}
+  {% if site.index.fullpath != page.fullpath %}
   .breadcrumbs
     {% link_to page.breadcrumbs.first %}
     {{ page.breadcrumbs.first.title | escape }}
@@ -49,3 +55,4 @@
     {{ page.title | escape }}
     {% endlink_to %}
     {% endfor %}
+  {% endif %}

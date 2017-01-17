@@ -3,16 +3,24 @@
     {% link_to sermon %}
     %h3 {{ sermon.title | escape }}
     {% endlink_to %}
+
+    {% unless series %}
     {% link_to sermon.series %}
     %p {{ sermon.series.name | escape }}
     {% endlink_to %}
+    {% endunless %}
+
+    {% if sermon.bible_verse %}
     %p {{ sermon.bible_verse | escape }}
+    {% endif %}
 
     %small
-      {{ sermon.date | localized_date: '%d/%m/%Y' }} - 
+      {{ sermon.date | localized_date: '%d/%m/%Y' }}
+      {% unless person %}
+      {{ " - " }}
       {% link_to sermon.person %}
       {{ sermon.person.name | escape }}
-      {% endlink_to %}
+      {% endlink_to %}{% endunless %}
   .right
     %p
       %a.btn.btn-outline{ href: "{% path_to sermon %}" }

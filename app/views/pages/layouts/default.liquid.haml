@@ -31,7 +31,7 @@ published: false
       {% endblock %}
 
       {% block children %}
-      {% if page.children %}
+      {% if page.children.size > 0 %}
       .children
         %div
           {% nav page, depth: 1, active_class: 'active' %}

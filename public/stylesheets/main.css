@@ -21,7 +21,7 @@ h3 span,
 h4 span,
 h5 span,
 h6 span {
-  color: #ffffff;
+  color: #b3b3b3;
   display: block;
 }
 h1,
@@ -64,7 +64,7 @@ a,
 .link {
   text-decoration: none;
   transition: all 0.15s ease-out;
-  color: #fff;
+  color: #6797ef;
 }
 a.no-link,
 .link.no-link {
@@ -96,8 +96,9 @@ time {
   font-size: 1.5rem;
 }
 blockquote {
+  color: #eee;
   padding: 2rem;
-  background-color: #282828;
+  background-color: #444;
   margin-top: 1rem;
 }
 blockquote cite {
@@ -126,7 +127,7 @@ textarea,
 button,
 select,
 option {
-  border: 2px #282828 solid;
+  border: 2px #444 solid;
   outline: none;
   margin-bottom: 1rem;
 }
@@ -139,7 +140,7 @@ option:focus {
 }
 select {
   background: transparent;
-  border: 2px #282828 solid;
+  border: 2px #444 solid;
   height: 4rem;
   text-indent: 1rem;
   cursor: pointer;
@@ -156,7 +157,7 @@ button {
 input[submit]:hover,
 button:hover {
   background-color: #9CEE33;
-  color: #fff;
+  color: #6797ef;
 }
 span {
   font-size: 1em;
@@ -190,7 +191,7 @@ em {
   margin-top: 1rem;
   margin-right: 1rem;
   padding: 1rem 2rem;
-  color: #fff;
+  color: #444;
 }
 .btn-nosides {
   padding-left: 0;
@@ -201,11 +202,11 @@ em {
   padding-top: 0;
 }
 .btn-outline {
-  border: 1px #fff solid;
+  border: 1px #444 solid;
 }
 .btn-outline:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #444;
+  color: #fff;
 }
 .center {
   text-align: center;
@@ -221,8 +222,8 @@ audio {
   padding-top: 2rem;
 }
 header {
-  color: #fff;
-  background-color: #333;
+  color: #333;
+  background-color: #fff;
 }
 header .logo {
   max-width: 960px;
@@ -257,12 +258,11 @@ header .logo .bold {
   font-weight: bold;
 }
 header a {
-  color: #fff;
+  color: #6797ef;
 }
 header .header-top {
-  background-color: #282828;
+  background-color: #444;
   color: #fff;
-  padding: 10px;
   text-align: center;
 }
 header .header-top * {
@@ -277,16 +277,32 @@ header .header-top a {
 header .header-top a:hover {
   text-decoration: underline;
 }
-header .header-top div {
-  margin: 0 3rem;
-}
 header .header-top h3 {
   padding: 0;
   margin: 0;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 3.2rem;
+  height: 3.2rem;
   text-indent: -9999px;
-  background-size: 2.4rem 2.4rem;
+  background-size: 3.2rem 3.2rem;
+}
+header .header-top .info {
+  display: none;
+  padding: 1rem 0;
+  position: absolute;
+  margin-top: 1rem;
+  background-color: #444;
+  width: 100%;
+  left: 0;
+}
+header .header-top > div {
+  margin: 0 2rem;
+  padding: 10px;
+}
+header .header-top > div:focus .info,
+header .header-top > div:hover .info,
+header .header-top > div .info:focus,
+header .header-top > div .info:hover {
+  display: inline-block;
 }
 header .header-top .service-times h3 {
   background-image: url(../images/icons/clock.svg);
@@ -298,8 +314,10 @@ header .hamburger {
   display: none;
   position: relative;
   margin: 0 auto 2rem;
-  height: 50px;
-  width: 50px;
+  height: 3.2rem;
+  width: 3.2rem;
+  float: right;
+  background-color: #444;
 }
 header .hamburger * {
   transition: all 0.3s;
@@ -315,7 +333,7 @@ header .hamburger label {
   z-index: 99;
   height: 100%;
   width: 100%;
-  top: 10px;
+  top: 0;
   left: 0;
 }
 header .hamburger .spinner4 {
@@ -357,10 +375,15 @@ header .hamburger input[type=checkbox]:checked ~ nav {
   display: none;
 }
 header nav {
-  background-color: #282828;
+  background-color: #444;
   -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
   transition: all .5s ease;
+  position: absolute;
+  margin-top: 1rem;
+  width: 100%;
+  left: 0;
+  top: 0;
 }
 header nav > ul {
   max-width: 960px;
@@ -371,7 +394,10 @@ header nav ul li {
   text-transform: uppercase;
 }
 header nav ul li:hover {
-  background-color: #5b5b5b;
+  background-color: #777777;
+}
+header nav ul li:hover a {
+  color: #fff;
 }
 header nav ul li a {
   display: block;
@@ -381,7 +407,7 @@ header nav ul li a {
 }
 header nav ul li ul {
   display: none;
-  background-color: #282828;
+  background-color: #444;
 }
 header nav ul li > ul a:hover + ul,
 header nav ul li > ul ul:hover {
@@ -392,7 +418,22 @@ header nav::after {
   content: '';
   height: 5rem;
   width: 100%;
-  background-color: #282828;
+  background-color: #444;
+}
+header .breadcrumbs {
+  max-width: 960px;
+  margin: 0 auto;
+}
+header .breadcrumbs a {
+  display: inline-block;
+  padding: 1rem 0.5rem;
+}
+header .breadcrumbs a:first-child {
+  padding-left: 0;
+}
+header .breadcrumbs a:last-child {
+  color: #000;
+  cursor: default;
 }
 header .info-banner {
   background-color: #8A1919;
@@ -403,30 +444,33 @@ header .info-banner h3 {
 }
 header .info-banner h3,
 header .info-banner a {
+  color: #fff;
   font-size: 1.7rem;
   text-align: center;
 }
 main section {
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #333;
 }
-main section:not(:first-child)::before {
+main section:not(:first-child):not(.image)::before {
   display: block;
   padding: 0;
   margin: 0;
   content: '';
   height: 40px;
-  background-color: #282828;
+  background-color: #444;
 }
 main section.image {
-  text-align: center;
-  max-height: 60rem;
-  overflow: hidden;
+  background-color: #7086A4;
+  min-height: 30rem;
+  padding: 2rem 2rem;
 }
-main section.image img {
-  margin: 0 auto;
-  padding: 0;
+main section.image > div {
+  margin: 3.5rem auto;
+}
+main section.image > div img {
   width: 100%;
+  height: auto;
 }
 main section a,
 main section .link {
@@ -435,9 +479,6 @@ main section .link {
 main section a:active,
 main section .link:active {
   opacity: 0.5;
-}
-main section:hover a {
-  color: #98CDFF;
 }
 main section.image {
   background-color: #7086A4;
@@ -482,7 +523,7 @@ main section > div div {
 main section > div .border {
   margin: auto 0.6rem 1.5rem;
   vertical-align: top;
-  border: 0.5rem #282828 solid;
+  border: 0.5rem #444 solid;
   padding: 2rem 2rem 2.5rem;
 }
 main section > div .border p {
@@ -496,7 +537,7 @@ main section > div > a {
 }
 main section .highlighted {
   margin-top: 2rem;
-  border: 0.2rem solid #282828;
+  border: 0.2rem solid #444;
   padding: 2rem;
   font-size: 1.5rem;
 }
@@ -522,8 +563,8 @@ main section .sermon p {
   padding: 0;
 }
 main .children {
-  background-color: #333;
-  color: #fff;
+  background-color: #fff;
+  color: #333;
 }
 main .children > div {
   padding: 3rem 1.2rem 5rem;
@@ -540,12 +581,12 @@ main .children nav ul li a {
   margin-top: 1rem;
   margin-right: 1rem;
   padding: 1rem 2rem;
-  color: #fff;
-  border: 1px #fff solid;
+  color: #333;
+  border: 1px #444 solid;
 }
 main .children nav ul li a:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #444;
+  color: #fff;
 }
 main .icon-list {
   width: 100%;
@@ -568,14 +609,19 @@ main .listing {
 main .listing::before {
   display: block;
   content: '';
-  border-top: 1px #fff solid;
+  border-top: 1px #444 solid;
   height: 10px;
   padding: 0;
+}
+main .sunday-services ul {
+  padding: 2rem 0;
 }
 main .sunday-services ul li {
   text-align: center;
   display: inline-block;
   padding-top: 20px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 main .sunday-services ul li ul li {
   padding-top: 0;
@@ -608,7 +654,7 @@ main .tweet time {
   padding-top: 0.5rem;
 }
 main .tweet .text {
-  color: #fff;
+  color: #333;
 }
 main .tweet svg {
   max-width: 3rem;
@@ -661,7 +707,7 @@ main .person-image img {
 }
 footer {
   padding: 2rem 0;
-  background-color: #282828;
+  background-color: #303030;
   color: #fff;
   text-align: center;
 }
@@ -674,7 +720,7 @@ footer:not(:first-child)::before {
   margin: 0;
   content: '';
   height: 20px;
-  background-color: #282828;
+  background-color: #444;
 }
 footer h2 {
   padding: 0 0 20px 0;
@@ -691,7 +737,7 @@ footer .link:hover:not(.no-highlight) {
   text-decoration: underline;
 }
 footer .contact {
-  max-width: 450px;
+  max-width: 470px;
   margin: 0 auto;
   padding: 0;
   overflow: auto;
@@ -699,12 +745,30 @@ footer .contact {
 footer .contact h3 {
   padding-top: 0;
 }
+footer .icon {
+  display: inline-block;
+  padding: 0;
+  margin: 0 1rem 0 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  text-indent: -9999px;
+  background-size: 2.4rem 2.4rem;
+}
+footer .icon.email {
+  background-image: url(../images/icons/email.svg);
+}
+footer .icon.telephone {
+  background-image: url(../images/icons/phone.svg);
+}
+footer .icon.map {
+  background-image: url(../images/icons/map-point.svg);
+}
 footer .developer {
   float: right;
 }
 @media (max-width: 720px) {
   header .hamburger {
-    display: block;
+    display: inline-block;
   }
   header nav {
     height: 0;
@@ -749,6 +813,8 @@ footer .developer {
   main .icon-list li a img {
     width: 12rem;
   }
+}
+@media (min-width: 510px) {
   .left {
     float: left;
   }
@@ -831,15 +897,25 @@ footer .developer {
   header .logo h2 span {
     display: inline;
   }
+  header .header-top h3 {
+    width: 2.4rem;
+    height: 2.4rem;
+    background-size: 2.4rem 2.4rem;
+  }
+  header .header-top > div .info {
+    display: inline-block;
+    padding: 0 2rem;
+    position: relative;
+    width: auto;
+    margin: 0;
+  }
   header nav {
     background-color: transparent;
+    position: relative;
+    margin-top: 0;
   }
   header nav > ul > .active > a + ul {
     display: block;
-  }
-  header nav .active > a {
-    border: 1px #fff solid;
-    border-bottom: #282828;
   }
   header nav ul li {
     display: block;
@@ -850,17 +926,17 @@ footer .developer {
     padding-right: 0;
   }
   header nav > ul .active {
-    background-color: #0e0e0e;
+    background-color: #2b2b2b;
     color: #fff;
   }
   header nav > ul > li {
     display: inline-block;
   }
   header nav > ul > li > a {
-    color: #fff;
+    color: #333;
   }
   header nav > ul > li.active a {
-    background-color: #282828;
+    background-color: #444;
     color: #fff;
   }
   header nav > ul > li > ul {
@@ -875,7 +951,7 @@ footer .developer {
     max-width: 20rem;
   }
   header nav > ul > li > ul > li.active a {
-    background-color: #0e0e0e;
+    background-color: #2b2b2b;
   }
 }
 @media (min-width: 820px) {
@@ -889,5 +965,13 @@ footer .developer {
   }
   header .logo h1 ul li {
     list-style: inside circle;
+  }
+  main section.image {
+    min-height: 35rem;
+  }
+}
+@media (min-width: 1300px) {
+  main section.image {
+    min-height: 40rem;
   }
 }

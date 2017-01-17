@@ -45,7 +45,7 @@ fields:
     localized: false
 
 - role: # The lowercase, underscored name of the field
-    label: Role # Human readable name of the field
+    label: Job Title or Role # Human readable name of the field
     type: string
     required: true
     hint: Explanatory text displayed in the back office
@@ -64,6 +64,13 @@ fields:
     type: file
     required: false
     hint: A landscape head-and-shoulders photo of the person
+    localized: false
+
+- tags:
+    label: tags
+    type: tags
+    required: true
+    hint: Groups people into teams. Can belong to more than one.
     localized: false
 
 - email: # The lowercase, underscored name of the field

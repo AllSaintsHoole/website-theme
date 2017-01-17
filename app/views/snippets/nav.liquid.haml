@@ -1,9 +1,10 @@
-.hamburger
-  %input#spinner-form4{ type: "checkbox" }
-  %label.spinner-spin4{ for: "spinner-form4" }
-    .spinner4.diagonal.part-1
-    .spinner4.horizontal
-    .spinner4.diagonal.part-2
 %nav
   %ul
+    {% if site.index.fullpath == page.fullpath %}
+    %li.active
+      %a Home
+    {% else %}
+    %li
+      %a{ href: "/" } Home
+    {% endif %}
     {% nav 'index', depth: 3, active_class: 'active', no_wrapper: true %}

@@ -30,8 +30,7 @@ content_type: "rooms"
       {% endif %}
       {{ room.description | markdown }}
 {% if room.photo.url %}
-%section.image
-  %img{ src: "{{ room.photo.url | resize: '960x300#' }}", width: "960", height: "300" }
+%section.image{ style: "background-image: url({{ room.photo.url }}); background-position: center; background-size: cover;"}
 {% endif %}
 
 {% endblock %}

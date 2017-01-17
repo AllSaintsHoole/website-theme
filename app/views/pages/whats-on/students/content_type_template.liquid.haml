@@ -39,8 +39,7 @@ content_type: "activities"
     {% endif %}
     {{ activity.about | markdown }}    
 {% if activity.banner_photo.url %}
-%section.image
-  %img{ src: "{{ activity.banner_photo.url | resize: '960x300#' }}", width: "960", height: "300" }
+%section.image{ style: "background-image: url({{ activity.banner_photo.url | resize: '1500x' }}); background-position: center; background-size: cover;"}
 {% endif %}
 
 {% endblock %}
