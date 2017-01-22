@@ -280,10 +280,10 @@ header .header-top a:hover {
 header .header-top h3 {
   padding: 0;
   margin: 0;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   text-indent: -9999px;
-  background-size: 3.2rem 3.2rem;
+  background-size: 2.4rem 2.4rem;
 }
 header .header-top .info {
   display: none;
@@ -314,8 +314,8 @@ header .hamburger {
   display: none;
   position: relative;
   margin: 0 auto 2rem;
-  height: 3.2rem;
-  width: 3.2rem;
+  height: 2.4rem;
+  width: 2.4rem;
   float: right;
   background-color: #444;
 }
@@ -338,7 +338,7 @@ header .hamburger label {
 }
 header .hamburger .spinner4 {
   position: absolute;
-  height: 5px;
+  height: 3px;
   width: 100%;
   background-color: #fff;
 }
@@ -369,7 +369,7 @@ header .hamburger input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part
 header .hamburger input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-2 {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
-  margin-top: -16px;
+  margin-top: -13px;
 }
 header .hamburger input[type=checkbox]:checked ~ nav {
   display: none;

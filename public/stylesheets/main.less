@@ -10,6 +10,7 @@
 
 @headerBarBackground: #444;
 @headerBarText: #fff;
+@headerIconSize: 2.4rem;
 
 @hamburgerColour: #fff;
 
@@ -426,10 +427,10 @@ header
     {
       padding: 0;
       margin: 0;
-      width: 3.2rem;
-      height: 3.2rem;
+      width: @headerIconSize;
+      height: @headerIconSize;
       text-indent: -9999px;
-      background-size: 3.2rem 3.2rem;
+      background-size: @headerIconSize @headerIconSize;
     }
 
     .info
@@ -480,8 +481,8 @@ header
     display: none; // shown in media query (max-width: 720px)
     position:relative;
     margin:0 auto 2rem;
-    height:3.2rem;
-    width:3.2rem;
+    height: @headerIconSize;
+    width: @headerIconSize;
     float: right;
     background-color: @headerBarBackground;
 
@@ -510,7 +511,7 @@ header
     .spinner4
     {
       position:absolute;
-      height:5px;
+      height:3px;
       width:100%;
       background-color: @hamburgerColour;
     }
@@ -521,7 +522,7 @@ header
 
     input[type=checkbox]:checked ~ .spinner-spin4 > .horizontal {transform:translate(-100px, 0px);-webkit-transform:translate(-100px, 0px); opacity: 0;}
     input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-1 {transform:rotate(-135deg);-webkit-transform:rotate(-135deg);margin-top:10px;}
-    input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-2 {transform:rotate(135deg);-webkit-transform:rotate(135deg);margin-top:-16px;}
+    input[type=checkbox]:checked ~ .spinner-spin4 > .diagonal.part-2 {transform:rotate(135deg);-webkit-transform:rotate(135deg);margin-top:-13px;}
     input[type=checkbox]:checked ~ nav {display:none;}
   }
 
