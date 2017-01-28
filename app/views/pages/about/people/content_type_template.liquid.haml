@@ -30,10 +30,17 @@ content_type: "people"
       {% endif %}
       {{ person.about | markdown }}
 
-      {% if person.email %}
+      {% if person.email or person.twitter %}
       %p
-        %a{ href: "mailto:{{ person.email | escape }}" }
+        {% if person.email and person.email != "" %}
+        %a.btn.btn-outline{ href: "mailto:{{ person.email | escape }}" }
           Contact by email
+        {% endif %}
+
+        {% if person.twitter and person.twitter != "" %}
+        %a.btn.btn-outline{ href: "https://twitter.com/{{ person.twitter | escape }}" }
+          Tweet @{{ person.twitter | escape }}
+        {% endif %}
       {% endif %}
 
 {% if person.sermons.length > 0 %}

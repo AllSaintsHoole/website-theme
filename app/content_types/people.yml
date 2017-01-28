@@ -66,18 +66,18 @@ fields:
     hint: A landscape head-and-shoulders photo of the person
     localized: false
 
-- tags:
-    label: tags
-    type: tags
-    required: true
-    hint: Groups people into teams. Can belong to more than one.
-    localized: false
-
 - email: # The lowercase, underscored name of the field
     label: Email # Human readable name of the field
     type: email
     required: false
     hint: Public email address which will be visible on the website
+    localized: false
+
+- twitter:
+    label: Twitter handle
+    type: string
+    readable: false
+    hint: Personal twitter handle
     localized: false
 
 - visible: # The lowercase, underscored name of the field
