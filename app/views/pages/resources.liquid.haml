@@ -1,11 +1,8 @@
 ---
 title: Resources
 
-# true if the page is included in the menu
-listed: true
-
-# true if the page is published
-published: true
+listed: true           # true if the page is included in the menu
+published: true        # true if the page is published
 
 # true if the page can be used as a layout for new pages created by the editors
 # is_layout: true
@@ -23,8 +20,7 @@ position: 10
 # content_type: "<slug of one of the content types>"
 
 editable_elements:
-  content/body: <p>Content coming soon</p>
-#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+  content/body: <p>A variety of resources from All Saints</p>
 ---
 {% extends 'layouts/default' %}
 
@@ -33,7 +29,35 @@ editable_elements:
   %div
     %h2 Resources
     {% editable_text body %}
-    %p Content comming soon
+    %p A variety of resources from All Saints
     {% endeditable_text %}
 
+    %h3
+      Latest Notices
+      {% assign notice = contents.notices.first %}
+      {% editable_model notices, hint: 'Displays the latest notices' %}
+      .listing
+        .left
+          %a{ href: "{{ notice.file.url }}" }
+            %h3
+              {{ notice.date | localized_date: '%d %B %Y' }}
+          %small
+            %time{ datetime: "{{ notice.date | date: '%FT%T%z' }}" }
+              {{ notice.date | distance_of_time_in_words: now }} ago
+        .right
+          %p
+            %a.btn.btn-outline{ href: "{{ notice.file.url }}" }
+              Download
+      {% endeditable_model %}
+    
+    %h3
+      Latest Sermon
+      {% editable_model sermons, hint: 'Displays the latest sermon' %}
+      {% assign sermon = contents.sermons.last %}
+      {% include 'sermon_listing' with sermon %}
+      {% endeditable_model %}
+
+%section
+  %div
+    %h3 Archive
 {% endblock %}
