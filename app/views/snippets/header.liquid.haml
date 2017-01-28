@@ -18,9 +18,9 @@
     .hamburger
       %input#spinner-form4{ type: "checkbox" }
       %label.spinner-spin4{ for: "spinner-form4" }
-        .spinner4.diagonal.part-1
-        .spinner4.horizontal
-        .spinner4.diagonal.part-2
+        %span.spinner4.diagonal.part-1
+        %span.spinner4.horizontal
+        %span.spinner4.diagonal.part-2
 
   .logo
     {% link_to site.index %}
@@ -37,7 +37,7 @@
 
   {% if site.metafields.header.info %}
   .info-banner
-    %h3
+    %p
       {% if site.metafields.header.info_link %}
       %a{ href: "{{ site.metafields.header.info_link }}" } {{ site.metafields.header.info | escape }}
       {% else %}
