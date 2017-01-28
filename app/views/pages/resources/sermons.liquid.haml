@@ -33,6 +33,7 @@ editable_elements:
     %p The latest messages from All Saints
     {% endeditable_text %}
 
+    {% editable_model sermons, hint: 'Displays a list of all sermons, newest first' %}
     {% with_scope order_by: 'date.desc' %}
     {% paginate contents.sermons by 10 %}
     {% for sermon in paginate.collection %}
@@ -48,5 +49,6 @@ editable_elements:
 
     {% endpaginate %}
     {% endwith_scope %}
+    {% endeditable_model %}
 
 {% endblock %}
