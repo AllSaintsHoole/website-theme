@@ -438,11 +438,11 @@ header .breadcrumbs a:last-child {
 header .info-banner {
   background-color: #8A1919;
 }
-header .info-banner h3 {
+header .info-banner p {
   margin: 0 auto;
   padding: 1rem;
 }
-header .info-banner h3,
+header .info-banner p,
 header .info-banner a {
   color: #fff;
   font-size: 1.7rem;
