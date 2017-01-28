@@ -8,12 +8,17 @@ published: false
 %html{lang: "en"}
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
-    %meta{charset: "utf-8"}
     %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
-
+    {% if page.meta_description and page.meta_description != "" %}
+    %meta{content: "{{ page.meta_description | truncate: 160 }}", name: "description"}
+    {% elsif content_entry.teaser and content_entry.teaser != "" %}
+    %meta{content: "{{ content_entry.teaser }}", name: "description"}
+    {% endif %}
     %title
-      {% if page.title and  page.title != "Home" and page.title != "Index" %}
+      {% if page.seo_title and page.seo_title != "" %}
+      {{ page.seo_title | escape }}
+      {% elsif page.title and page.title != "Home" and page.title != "Index" %}
       {{ page.title | escape }}
       |
       {% endif %}
