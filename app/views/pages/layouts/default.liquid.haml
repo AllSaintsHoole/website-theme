@@ -28,6 +28,9 @@ published: false
 
     {{ 'main.css' | stylesheet_tag }}
 
+    {% block extrameta %}
+    {% endblock %}
+
   %body
     {% include 'header' %}
 
