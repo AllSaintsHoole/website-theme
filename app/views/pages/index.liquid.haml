@@ -39,7 +39,7 @@ editable_elements:
       /.btn
       rest of week
       %span.arrow &#8964;
-    {% endlink_to %}
+      {% endlink_to %}
 
 %section.twitter
   %div
@@ -65,7 +65,8 @@ editable_elements:
       %p {{ contents.sermons.last.person.name | escape }}
       %p {{ contents.sermons.last.bible_verse | escape }}
       %small
-        %time {{ contents.sermons.last.date | distance_of_time_in_words: now }} ago
+        %time{ datetime: "{{ contents.sermons.last.date | date: '%FT%T%z' }}" }
+          {{ contents.sermons.last.date | distance_of_time_in_words: now }} ago
       %p
         %a.btn.btn-outline{ href: "{% path_to contents.sermons.last %}" }
           View sermon
@@ -86,7 +87,8 @@ editable_elements:
         {% endlink_to %}
         %p {{ sermon.person.name | escape }}
         %small
-          %time {{ sermon.date | distance_of_time_in_words: now }} ago
+          %time{ datetime: "{{ sermon.date | date: '%FT%T%z' }}" }
+            {{ sermon.date | distance_of_time_in_words: now }} ago
         {% endfor %}
         {% endwith_scope %}
       %a.btn.btn-nosides{ href: "{% path_to sermons %}" }
