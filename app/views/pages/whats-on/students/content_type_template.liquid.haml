@@ -1,5 +1,5 @@
 ---
-title: Youth's activity template
+title: Students activity template
 
 # true if the page is included in the menu
 listed: true
@@ -27,6 +27,10 @@ content_type: "activities"
 #   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
 ---
 {% extends parent %}
+
+{% block extrameta %}
+%link{ rel: "canonical", href: "{{ base_url }}/whats-on/{{ activity.category | downcase | escape }}/{{ activity._slug }}" }
+{% endblock %}
 
 {% block content %}
 %section
