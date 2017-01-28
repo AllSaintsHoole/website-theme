@@ -15,7 +15,8 @@
     {% endif %}
 
     %small
-      {{ sermon.date | localized_date: '%d/%m/%Y' }}
+      %time{ datetime: "{{ sermon.date | date: '%FT%T%z' }}" }
+        {{ sermon.date | localized_date: '%d/%m/%Y' }}
       {% unless person %}
       {{ " - " }}
       {% link_to sermon.person %}
