@@ -18,6 +18,7 @@ published: false
     %title
       {% if page.seo_title and page.seo_title != "" %}
       {{ page.seo_title | escape }}
+      |
       {% elsif page.title and page.title != "Home" and page.title != "Index" %}
       {{ page.title | escape }}
       |
@@ -25,8 +26,8 @@ published: false
       {{ site.name | escape }}
 
     %link{ rel: "apple-touch-icon", sizes: "180x180", href: "{{ 'apple-touch-icon.png' | theme_image_url }}" }
-    %link{ rel: "icon", type: "image/png", href: "{ 'favicon-32x32.png' | theme_image_url }}", sizes: "32x32" }
-    %link{ rel: "icon", type: "image/png", href: "{{ 'favicon-16x16.png' | theme_image_url }}", sizes:"16x16" }
+    %link{ rel: "icon", type: "image/png", href: "{{ 'favicon-32x32.png' | theme_image_url }}", sizes: "32x32" }
+    %link{ rel: "icon", type: "image/png", href: "{{ 'favicon-16x16.png' | theme_image_url }}", sizes: "16x16" }
     %link{ rel: "manifest", href: "{{ 'manifest.json' | theme_image_url }}" }
     %link{ rel: "mask-icon", href: "{{ 'safari-pinned-tab.svg' | theme_image_url }}", color: "#41abc9" }
     %meta{ name: "theme-color", content: "#ffffff" }
