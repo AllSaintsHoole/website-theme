@@ -47,7 +47,7 @@ content_type: "people"
 %section
   %div
     %h3 Recent sermons:
-    {% for sermon in person.sermons reversed limit:2 %}
+    {% for sermon in person.sermons limit:2 %}
     {% include 'sermon_listing' with sermon %}
     {% endfor %}
 {% endif %}

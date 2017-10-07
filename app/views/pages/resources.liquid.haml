@@ -53,7 +53,7 @@ editable_elements:
     %h3
       Latest Sermon
       {% editable_model sermons, hint: 'Displays the latest sermon' %}
-      {% assign sermon = contents.sermons.last %}
+      {% assign sermon = contents.sermons.first %}
       {% include 'sermon_listing' with sermon %}
       {% endeditable_model %}
 

@@ -39,10 +39,8 @@ content_type: "services"
   %div
     %h3 Latest {{ service.name | escape }} sermons:
 
-    {% for sermon in service.sermons reversed %}
-    {% if forloop.index0 <= 1 %}
+    {% for sermon in service.sermons limit:2 %}
     {% include 'sermon_listing' with sermon %}
-    {% endif %}
     {% endfor %}
 
 {% endif %}

@@ -60,29 +60,29 @@ editable_elements:
   %div
     %h2 Downloads
     .sermon.left
-      {% link_to contents.sermons.last %}
-      %h3 {{ contents.sermons.last.title | escape }}
+      {% link_to contents.sermons.first %}
+      %h3 {{ contents.sermons.first.title | escape }}
       {% endlink_to %}
-      {% link_to contents.sermons.last.series %}
-      %small {{ contents.sermons.last.series.name | escape }}
+      {% link_to contents.sermons.first.series %}
+      %small {{ contents.sermons.first.series.name | escape }}
       {% endlink_to %}
-      %p {{ contents.sermons.last.person.name | escape }}
-      %p {{ contents.sermons.last.bible_verse | escape }}
+      %p {{ contents.sermons.first.person.name | escape }}
+      %p {{ contents.sermons.first.bible_verse | escape }}
       %small
-        %time{ datetime: "{{ contents.sermons.last.date | date: '%FT%T%z' }}" }
-          {{ contents.sermons.last.date | distance_of_time_in_words: now }} ago
+        %time{ datetime: "{{ contents.sermons.first.date | date: '%FT%T%z' }}" }
+          {{ contents.sermons.first.date | distance_of_time_in_words: now }} ago
       %p
-        %a.btn.btn-outline{ href: "{% path_to contents.sermons.last %}" }
+        %a.btn.btn-outline{ href: "{% path_to contents.sermons.first %}" }
           View sermon
-        {% if contents.sermons.last.series.handbook.url %}
-        %a.btn{ href: "{{ contents.sermons.last.series.handbook.url }}" }
+        {% if contents.sermons.first.series.handbook.url %}
+        %a.btn{ href: "{{ contents.sermons.first.series.handbook.url }}" }
           Series handbook
         {% endif %}
     .right.right-align
       %h3 Older
       .sermon
         {% with_scope order_by: 'date.desc' %}
-        {% for sermon in contents.sermons reversed limit:1 offset:1 %}
+        {% for sermon in contents.sermons limit:1 offset:1 %}
         {% link_to sermon %}
         %h4 {{ sermon.title | escape }}
         {% endlink_to %}
