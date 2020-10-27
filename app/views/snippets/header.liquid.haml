@@ -7,7 +7,7 @@
         {% for service in contents.services %}
         %li
           {% link_to service %}
-          {{ service.time }}
+          {% if service.time != blank %}{{ service.time }}{% else %}{{ service.abriviated_name }}{% endif %}
           {% endlink_to %}
         {% endfor %}
         {% endwith_scope %}
@@ -15,6 +15,10 @@
       %h3 Location
       %a.info{ href: "{% path_to contact %}" }
         {{ site.metafields.footer.address }}
+    %a.login{ href: "https://login.allsaints.church" }
+      %h3 Login
+      .info.link{ href: "https://login.allsaints.church" }
+        Login
     .hamburger
       %input#spinner-form4{ type: "checkbox" }
       %label.spinner-spin4{ for: "spinner-form4" }

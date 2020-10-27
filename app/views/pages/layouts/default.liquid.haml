@@ -18,7 +18,6 @@ published: false
     %title
       {% if page.seo_title and page.seo_title != "" %}
       {{ page.seo_title | escape }}
-      |
       {% elsif page.title and page.title != "Home" and page.title != "Index" %}
       {{ page.title | escape }}
       |
@@ -29,7 +28,7 @@ published: false
     %link{ rel: "icon", type: "image/png", href: "{{ 'favicon-32x32.png' | theme_image_url }}", sizes: "32x32" }
     %link{ rel: "icon", type: "image/png", href: "{{ 'favicon-16x16.png' | theme_image_url }}", sizes: "16x16" }
     %link{ rel: "mask-icon", href: "{{ 'safari-pinned-tab.svg' | theme_image_url }}", color: "#41abc9" }
-    %meta{ name: "theme-color", content: "#ffffff" }
+    %meta{ name: "theme-color", content: "#444444" }
 
     {{ 'main.css' | stylesheet_tag }}
 

@@ -57,6 +57,8 @@ metafields:
     centre_email: centre@allsaints.church
     address: Hoole Road, Chester, CH2&nbsp;3HZ
     charity_number: '1131968'
+    download_1_link: /safeguarding.pdf
+    download_1_text: Safeguarding
   header:
     info: 'New website: There may be things which don''t work correctly. Let us know
       if you find any!'

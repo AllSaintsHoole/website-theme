@@ -38,7 +38,20 @@ editable_elements:
           {% endfor %}
       {% endif %}
       {% endwith_scope %}
-    %p.center
+    {% with_scope regular: true, frequency: 'Other' %}
+    {% if contents.services.size > 0 %}
+    %ul.center
+      %li
+        Other Services
+        %ul
+          {% for service in contents.services %}
+          %li
+            %a.btn.btn-outline{ href: "{% path_to service %}" }
+              {{ service.abriviated_name }}
+          {% endfor %}
+    {% endif %}
+    {% endwith_scope %}
+    %p.center.space
       {% link_to services %}
       /.btn
       rest of week

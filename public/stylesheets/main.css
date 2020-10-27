@@ -228,7 +228,7 @@ header {
 header .logo {
   max-width: 960px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 header .logo img:hover {
   color: #e2d;
@@ -238,6 +238,7 @@ header .logo a {
   margin: 0 auto;
   text-align: center;
   text-decoration: none;
+  max-width: 9rem;
 }
 header .logo a img {
   display: inline;
@@ -246,13 +247,18 @@ header .logo a img {
 header .logo a img:hover {
   opacity: 0.5;
 }
+header .logo span {
+  display: inline;
+}
 header .logo h1 {
   text-align: center;
   font-size: 3rem;
+  padding-top: 0.9rem;
 }
 header .logo h2 {
   font-size: 2.5rem;
   text-align: center;
+  padding-top: 0.5rem;
 }
 header .logo .bold {
   font-weight: bold;
@@ -269,12 +275,15 @@ header .header-top * {
   display: inline-block;
   vertical-align: top;
 }
-header .header-top a {
+header .header-top a,
+header .header-top .link {
   color: #fff;
   text-decoration: none;
   padding: 0 2rem;
+  font-size: 1.5rem;
 }
-header .header-top a:hover {
+header .header-top a:hover,
+header .header-top .link:hover {
   text-decoration: underline;
 }
 header .header-top h3 {
@@ -294,14 +303,19 @@ header .header-top .info {
   width: 100%;
   left: 0;
 }
-header .header-top > div {
+header .header-top > div,
+header .header-top > a {
   margin: 0 2rem;
   padding: 10px;
 }
 header .header-top > div:focus .info,
+header .header-top > a:focus .info,
 header .header-top > div:hover .info,
+header .header-top > a:hover .info,
 header .header-top > div .info:focus,
-header .header-top > div .info:hover {
+header .header-top > a .info:focus,
+header .header-top > div .info:hover,
+header .header-top > a .info:hover {
   display: inline-block;
 }
 header .header-top .service-times h3 {
@@ -309,6 +323,9 @@ header .header-top .service-times h3 {
 }
 header .header-top .location h3 {
   background-image: url(../images/icons/map-point.svg);
+}
+header .header-top .login h3 {
+  background-image: url(../images/icons/padlock.svg);
 }
 header .hamburger {
   display: none;
@@ -613,8 +630,11 @@ main .listing::before {
   height: 10px;
   padding: 0;
 }
+main .sunday-services p {
+  padding: 4rem 0 1rem;
+}
 main .sunday-services ul {
-  padding: 2rem 0;
+  padding: 2rem 0 0;
 }
 main .sunday-services ul li {
   text-align: center;
@@ -902,7 +922,8 @@ footer .developer {
     height: 2.4rem;
     background-size: 2.4rem 2.4rem;
   }
-  header .header-top > div .info {
+  header .header-top > div .info,
+  header .header-top > a .info {
     display: inline-block;
     padding: 0 2rem;
     position: relative;

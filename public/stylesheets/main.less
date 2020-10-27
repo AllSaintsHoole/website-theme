@@ -348,7 +348,7 @@ header
   {
     max-width: 960px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 0;
 
     img:hover
     {
@@ -362,7 +362,7 @@ header
       text-align: center;
       //padding: 15px;
       text-decoration: none;
-      //max-width: 15rem;
+      max-width: 9rem;
 
       img
       {
@@ -376,16 +376,23 @@ header
       }
     }
 
+    span
+      {
+        display: inline;
+      }
+
     h1
     {
       text-align: center;
       font-size: 3rem;
+      padding-top: 0.9rem;
     }
 
     h2
     {
       font-size: 2.5rem;
       text-align: center;
+      padding-top: 0.5rem;
     }
 
     .bold
@@ -411,11 +418,13 @@ header
       vertical-align: top;
     }
 
-    a
+    a,
+    .link
     {
       color: @headerBarText;
       text-decoration: none;
       padding: 0 2rem;
+      font-size: 1.5rem;
 
       &:hover
       {
@@ -444,7 +453,8 @@ header
       left: 0;
     }
 
-    > div
+    > div,
+    > a
     {
       margin: 0 2rem;
       padding: 10px;
@@ -471,6 +481,14 @@ header
       h3
       {
         background-image: url(../images/icons/map-point.svg);
+      }
+    }
+
+    .login
+    {
+      h3
+      {
+        background-image: url(../images/icons/padlock.svg);
       }
     }
   }
@@ -928,27 +946,33 @@ main
     }
   }
 
-  .sunday-services ul
+  .sunday-services
   {
-    padding: 2rem 0;
+    p {
+      padding: 4rem 0 1rem;
+    }
 
-    li
-    {
-      text-align: center;
-      display: inline-block;
-      padding-top: 20px;
+    ul {
+      padding: 2rem 0 0;
 
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-
-      ul li 
+      li
       {
-        padding-top: 0;
-      }
-      
-      p
-      {
-        margin-top: 20px;
+        text-align: center;
+        display: inline-block;
+        padding-top: 20px;
+
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+
+        ul li 
+        {
+          padding-top: 0;
+        }
+        
+        p
+        {
+          margin-top: 20px;
+        }
       }
     }
   }
@@ -1436,7 +1460,8 @@ footer
         background-size: 2.4rem 2.4rem;
       }
 
-      > div .info
+      > div .info,
+      > a .info
       {
         display: inline-block;
         padding: 0 2rem;

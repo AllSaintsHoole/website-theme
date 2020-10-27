@@ -39,6 +39,10 @@ content_type: "sermons"
     {% endlink_to %}
     {% endif %}
 
+    %small
+      %time{ datetime: "{{ sermon.date | date: '%FT%T%z' }}" }
+        {{ sermon.date | localized_date: '%d/%m/%Y' }}
+
     %p {{ sermon.bible_verse | escape }}
 
     {% capture readingurl %}https://bible-api.com/{{ sermon.bible_verse | encode }}{% endcapture %}
